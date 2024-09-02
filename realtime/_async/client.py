@@ -190,7 +190,7 @@ class AsyncRealtimeClient:
             except websockets.exceptions.ConnectionClosed:
                 if self.auto_reconnect:
                     logger.info("Connection with server closed, trying to reconnect...")
-                    await self._connect()
+                    await self.connect()
                 else:
                     logger.exception("Connection with the server closed.")
                     break
